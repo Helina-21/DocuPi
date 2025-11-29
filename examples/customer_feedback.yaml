@@ -1,0 +1,18 @@
+name: customer_feedback
+steps:
+  - name: ingest
+    type: local_folder
+    config:
+      path: eval/datasets/sample_contracts/docs
+  - name: chunk
+    type: chunk
+    config:
+      size: 400
+      overlap: 40
+  - name: embed
+    type: embed
+    config:
+  - name: sink
+    type: jsonl_sink
+    config:
+      path: runs/feedback_output.jsonl

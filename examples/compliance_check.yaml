@@ -1,0 +1,22 @@
+name: compliance_check
+steps:
+  - name: ingest
+    type: local_folder
+    config:
+      path: eval/datasets/sample_contracts/docs
+  - name: chunk
+    type: chunk
+    config:
+      size: 300
+      overlap: 30
+  - name: embed
+    type: embed
+    config:
+  - name: retrieve
+    type: retrieve
+    config:
+      top_k: 1
+  - name: sink
+    type: jsonl_sink
+    config:
+      path: runs/compliance_output.jsonl
