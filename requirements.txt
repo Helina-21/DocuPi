@@ -1,0 +1,13 @@
+typer
+pyyaml
+pydantic
+faiss-cpu
+fastapi
+uvicorn
+python-dotenv
+rich
+jinja2
+openai>=1.0.0
+python-dateutil
+numpy
+pytest
